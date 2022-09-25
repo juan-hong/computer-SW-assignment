@@ -57,4 +57,17 @@ else:
     
 # LAB 6-6
 
+the_day = (1919,3,1)
+year, month, day = the_day
+print(year, '년', month, '월', day, '일은 삼일절 입니다')
+
+n_list = [10,20,30]
+tup = tuple(n_list)
+a, b, c = tup
+print('a =', a)
+print('b =', b)
+print('c =', c)
+
+
+# LAB 6-7
 
