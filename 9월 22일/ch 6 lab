@@ -19,3 +19,42 @@ person_dic['특기'] = '분신술'
 print(person_dic)
 person_dic['아버지'] = '홍판서'
 print(person_dic)
+
+
+# LAB 6-3
+
+capital_dic = {'Korea':'Seoul', 'China':'Beijing', 'USA':'Washington DC'}
+#'korea' in capital_dic True
+#'China' in capital_dic True
+#'Indonesia' in capital_dic False
+#'Beijing' in capital_dic False
+
+
+# LAB 6-4
+
+fruits_dic = {'apple':6000, 'melon':3000, 'banana':5000, 'orange':7000}
+print(fruits_dic.keys())
+print(fruits_dic.values())
+fruits_dic.pop(0)
+fruits_dic.clear()
+
+
+# LAB 6-5
+
+fruits_dic = {'apple':6000, 'melon':3000, 'banana':5000, 'orange':4000}
+print(list(fruits_dic.keys()))
+print(list(fruits_dic.values()))
+print('fruits_dic 딕셔너리의 항복의 개수 :', len(fruits_dic))
+if 'apple' in fruits_dic:
+    print('apple is in fruits_dic.')
+else:
+    print('apple is not in fruits_dic.')
+if 'mango' in fruits_dic:
+    print('mango is in fruits_dic.')
+else:
+    print('mango is not in fruits_dic.')
+    
+    
+# LAB 6-6
+
+
