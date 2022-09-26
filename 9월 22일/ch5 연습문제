@@ -1,1 +1,84 @@
+# 연습문제 1번
+
+list1 = [3,5,7]
+list2 = [2,3,4,5,6]
+for i in list1:
+    for j in list2:
+        print('{} * {} ='.format(i,j), i * j)
+
+
+# 연습문제 2번
+
+a = [2,3,4,5,6]
+print('rev_a = [', end=(''))
+for i in range(5):
+    print(a.pop(), end=(','))
+print(']')
+
+
+# 연습문제 3번
+
+n_list = [10,20,30,50,60]
+print('리스트 원소들 :', n_list)
+sum = 0
+for i in range(5):
+    sum += n_list[i]
+print('리스트 원소들의 합 :', sum)
+
+
+# 연습문제 4번
+
+n_list = [10,20,30,50,60]
+print('리스트 원소들 :', n_list)
+max = 0
+for i in range(5):
+    if max < n_list[i]:
+        max = n_list[i]
+print('리스트 원소들의 합 :', max)
+
+
+# 연습문제 5번
+
+s_list = ['abc', 'bcd', 'bcdefg', 'abba', 'cddc', 'opq']
+min = s_list[0]
+for i in s_list:
+    if len(min) > len(i):
+        min = i
+print('가장 길이가 짧은 문자열 :', min)
+max = s_list[0]
+for i in s_list:
+    if len(max) < len(i):
+        max = i
+print('가장 길이가 긴 문자열 :', max)
+
+s_list = ['abc', 'bcd', 'bcdefg', 'abba', 'cddc', 'opq']
+print('가장 길이가 짧은 문자열 :')
+for i in s_list:
+    if len(i) == 3:
+        print(i, end=(' '))
+        
+        
+# 연습문제 6번
+# 질문: input 함수로 한번에 여러가지를 입력받는 방법은?
+# 대답 : split()함수를 사용한다
+# 질문 : 밑에 함수를 조금 더 깨끗하게 할 수는 없을까...
+# 대답 : 찾지 못함
+
+list = []
+n1, n2, n3, n4, n5 = input('숫자 5개를 넣으시오 :').split()
+n1 = int(n1)
+n2 = int(n2)
+n3 = int(n3)
+n4 = int(n4)
+n5 = int(n5)
+list.append(n1)
+list.append(n2)
+list.append(n3)
+list.append(n4)
+list.append(n5)
+print('합 :', sum(list))
+print('평균 :', sum(list) / len(list))
+print('최대값 :', max(list))
+print('최솟값 :', min(list))
+
 
