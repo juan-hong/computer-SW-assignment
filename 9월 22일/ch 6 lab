@@ -71,3 +71,56 @@ print('c =', c)
 
 # LAB 6-7
 
+#랩 6-7 어려움...
+
+
+# LAB 6-8
+
+x = int(input('x ='))
+y = int(input('y ='))
+print('x_sq, y_sq = square(x,y)')
+def func (a, b):
+    x_sq = a * a
+    y_sq = b * b
+    return x_sq, y_sq
+x_sq, y_sq = func(x, y)
+print('{} 제곱 = {}, {} 제곱 = {}'.format(x, x_sq, y, y_sq))
+
+t1 = (10,20,30)
+t2 = (40,50,60)
+t3 = t1 + t2
+print(sum(t3))
+
+HelloHelloHello
+(Hello, Hello, Hello)
+
+
+# LAB 6-9
+
+fruits_list = ['apple', 'mango', 'banana']
+fruits_set = set(fruits_list)
+print('fruits_set =', fruits_set)
+
+greet = 'Good morning'
+greet_set = set(greet)
+print('greet_set =', greet_set)
+
+
+# LAB 6-10
+
+{70, 40, 10, 50, 20, 60, 30}
+{40, 30}
+{10, 20}
+{50, 20, 70, 10, 60}
+False
+False
+False
+
+# LAB 6-11
+
+AXB = {(1, A), (1, B), (1,C), (2, A), (2, B), (2, C)}
+BXA = {(A, 1), (A, 2), (B,1), (B, 2), (C, 1), (C, 2)}
+AXA = {(1, 1), (1, 2), (1, 2), (2,2)}
+BXB = {(A, A), (A, B), (A,C), (B, A), (B, B), (B, C), (C, A), (C, B), (C, C)}
+
+# LAB 6-12 IS GOD DANM
