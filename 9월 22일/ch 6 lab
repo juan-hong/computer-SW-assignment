@@ -124,3 +124,49 @@ AXA = {(1, 1), (1, 2), (1, 2), (2,2)}
 BXB = {(A, A), (A, B), (A,C), (B, A), (B, B), (B, C), (C, A), (C, B), (C, C)}
 
 # LAB 6-12 IS GOD DANM
+
+def product_set(set1, set2):
+    result = set()
+    for i in set1:
+        for j in set2: 
+            result = result | {(i, j)} 
+    return result 
+
+def tuple_sum(tup):
+    if isinstance(tup, int): 
+        return tup 
+    else: 
+        accum = 0 
+        for element in tup:
+            accum += tuple_sum(element) 
+    return accum 
+        
+def exp(input_set, exponent): 
+    res = input_set 
+    for _ in range(exponenet-1): 
+        res=product_set(res, input_set) 
+    return res 
+
+dice = {1, 2, 3, 4, 5, 6} 
+dice_two = product_set(dice, dice) 
+dice_three = product_set(dice, dice_two) 
+number_1=0 
+for i in dice_three: 
+    number_1 += 1 
+print("1. 주사위를 세번 던져 발생할 수 있는 사건은 {} 가지 경우가 존재합니다.".format(number_1)) 
+sums=[tuple_sum(i) for i in dice_three] 
+number_2=0 
+
+for i in sums: 
+    if i>=10: 
+        number_2+=1 
+print('2. 주사위를 세 번 던져 나온 눈의 합이 10 이상인 경우는 %d 가지입니다.' % number_2) 
+print('3번') 
+
+for i in range(3,19): 
+    number=0 
+    for j in sums: 
+        if j>=i: 
+            number+=1 
+    number_3=number/number_1*100 
+    print('눈의 합으로 %2d 이상을 얻을 확률 %5.2f%%' %(i, number_3))
