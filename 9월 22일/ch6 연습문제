@@ -1,1 +1,56 @@
+# 연습문제 1번
+# 질문 : 변수 없이 가장 큰것만을 선별하는 방법이 무엇이 있을까?
+# 대답 : 찾지 못함 
 
+list = [5,6,3,9,2,12,3,8,7]
+for i in range(len(list)):
+    if list[len(list) - 1] < list[i]:
+        list[len(list) - 1],  list[i] = list[i], list[len(list) - 1]
+print(list)
+
+
+# 연습문제 2번
+# 질문 : 이중 for문을 사용하는건 알겠으나 순서를 어디부터 돌려할지 모르겠다
+# 대답 : 거품정렬은 앞에서부터 하나하나 가면서 큰거를 뒤로 넘기는 방식이기에 겉 for문을 range(len(list) - 1, 0, -1) 으로 돌려준다 그러면 리스트의 맨 뒤부터 차근차근 i 값을 받고 
+         안에 들어갈 for문에는 i의 수를 넣어주면 이미 들어간 가장 큰 숫자는 비교 안하고 수를 교환 시킬 수 있다
+
+list = [5,6,3,9,2,12,3,8,7]
+for i in range(len(list) - 1, 0, -1):
+        for j in range(i):
+            if list[j] > list[j + 1]:
+                list[j], list[j + 1] = list[j + 1], list[j]
+print(list)
+
+# 연습문제 3번
+# 질문 : 검사 방법이 애매하다 만약 for문을 돌려서 검사한다고 해서 틀린다면 화문이 틀립니다를 출력한다고 하고 맞다면 화문이 맞습니다 라고 출력 한다고 해도 그러면 여러분 출력되는데 
+         어떻게 해결해야할까
+# 대답 : 검사 하는 함수를 하나 선언해서 틀린경우 바로 0을 반환하고 틀린곳이 없는 경우 1을 반환한다 그러면 깔끔하게 반환이 되고 함수를 조건문으로 1일때 0일때를 선언해주면 된다!
+
+def f1(line):
+    for i in range(0, int(len(line) / 2), 1):
+        if line[i] != line[len(line) - i - 1]:
+            return 0
+    return 1
+line = input('문자 열을 입력하시오 :')
+print(line)
+if f1(line) == 1:
+    print('화문입니다')
+else: 
+    print('화문이 아닙니다')
+
+
+# 연습문제 4번
+# 질문 : input에 문자열을 입력 받은 자국을 없애는 방법을 모르겠음, $뒤 <가 없으면 오류가 나게 해야하는데 모르겠음 , 다 모르겠음 ㅠ
+# 대답 : NULL
+# 추신 : 그래도 작동하는 사전을 만듬...
+
+print('사전 프로그램 시작... 종료는 q키를 입력')
+dic = {'boy':'소년', 'girl':'소녀', 'man':'남자, 사람', 'woman':'여자', 'house':'집', 'korea':'한국'}
+while True:
+   n = input('$ ')
+   if n == 'q':
+       break
+   else:
+       for i in dic.keys():
+           if i == n:
+               print('$ < {} : {}'.format(i, dic.get(i)))
