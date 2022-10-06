@@ -99,6 +99,15 @@ print("반지름 {}인 원의 면적은 {}, 원의 둘레는 {}".format(radius, 
 
 
 # LAB 4-8
+# 아직 미완성
+
+def muliples(a,n):
+    for i in n:
+        return a * (i + 1)
+r1, r2, r3, r4 = muliples(3,4)
+print(r1, r2, r3, r4)
+r1, r2, r3, r4, r5 = muliples(2,5)
+print(r1, r2, r3, r4, r5)
 
 
 
