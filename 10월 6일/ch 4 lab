@@ -1,0 +1,167 @@
+# LAB 4-1
+# 질문 : 만약 함수 호출 문을 삭제한다면?
+# 대답 : 오류가 일어나서 실행이 안된다!
+
+def print_star():
+    print("******************")
+print_star()
+print_star()
+print_star()
+print_star()
+print_star()
+print_star()
+
+
+# LAB 4-2
+
+def print_star5():
+    print("******************")
+    print("******************")
+    print("******************")
+    print("******************")
+    print("******************")
+print_star5()
+print_star5()
+
+
+# LAB 4-3
+
+def print_star():
+    print("******************")
+def print_plus():
+    print("++++++++++++++++++")
+def print_hash():
+    print("##################")
+print_hash()
+print_star()
+print_plus()
+print_plus()
+print_star()
+print_hash()
+
+
+# LAB 4-4
+
+def print_star(n):
+    for i in range(n):
+        print("*********************")
+print_star(10)
+
+def print_hash(n):
+    for i in range(n):
+        print("###########################")
+print_hash(6) 
+
+def print_hash(n):
+    for i in range(n):
+        print(i)
+        print(" ###########################")
+print_hash(6)
+
+
+# LAB 4-5
+
+def print_sub(a,b):
+    print(a, "과", b,"의 차는 ",a-b, "입니다.")
+print_sub(10, 20)
+
+def print_mult(a,b):
+    print(a, "과", b,"의 곱은", a*b, "입니다.") 
+print_mult(10,20)
+
+
+
+# LAB 4-6
+
+def print_root(a, b, c):
+    r1 = (-b + (b ** 2 - 4 * a * c) ** 0.5) / (2 * a)
+    r2 = (-b - (b ** 2 - 4 * a * c) ** 0.5) / (2 * a)
+    print('해는', r1, '또는', r2)
+print_root(1, 4, -21)
+print_root(1, -6, 8)
+
+def print_area (width, height):
+    area = width * height / 2
+    print("밑변 {}, 높이가{}인 삼각형의 면적은 : {}".format(width, height, area) )
+print_area(10,20)
+
+
+# LAB 4-7
+
+def circle_area_circum(radius):
+    area = radius * radius * 3.14
+    circum = 2 * 3.14 * radius
+    return area, circum
+radius = 10
+area, circum = circle_area_circum(radius)
+circum = round(circum, 1)
+print("반지름 {}인 원의 면적은 {}, 원의 둘레는 {}".format(radius, area, circum))
+
+
+# LAB 4-8
+
+
+
+# LAB 4-9
+
+def print_name(honorifics, first_name, last_name):
+    '''키워드 이용한 프로그램'''
+    print(honorifics, first_name, last_name)
+print_name(first_name='Gildong', last_name='Hong', honorifics='Dr.')
+print_name('Gildong', 'Hong', 'Dr.')
+
+
+# LAB 4-10
+
+def sum_nums(*nums):
+    result = 0
+    for i in nums:
+        result += i
+    return result
+print('3개의 인자 (10, 20, 30)')
+print('합계: {}, 평균: {}'.format(sum_nums(10,20,30), sum_nums(10,20,30) / 3))
+
+def sum_nums(*nums):
+    result = 0
+    for i in nums:
+        result += i
+    return result
+print('5개의 인자 (10, 20, 30, 40, 50)')
+print('합계: {}, 평균: {}'.format(sum_nums(10,20,30,40,50), sum_nums(10,20,30,40,50) / 5))
+
+def min_nums(*nums):
+    result = 0
+    k = 0
+    for i in nums:
+        if k == 0:
+            result = i
+            k += 1
+        else:
+            if result > i:
+                result = i
+    print("최소값은", result)
+min_nums(20,40,50,10)
+
+
+# LAB 4-11
+
+name = input('당신의 이름을 입력해주세요 : ')
+age = input('나이를 입력해주세요 : ')
+job = input('직업을 입력해주세요 : ')
+address = input('사는 곳을 입력해 주세요 : ')
+print('당신의 이름은 {}, 나이는 {}살, 직업은 {}, 사는 곳은 {}입니다.'.format(name, age, job, address))
+
+name = input('당신의 이름을 입력해주세요 : ')
+age = input('나이를 입력해주세요 : ')
+job = input('직업을 입력해주세요 : ')
+address = input('사는 곳을 입력해 주세요 : ')
+print('당신의 이름은', name,', 나이는', age, '살, 직업은', job, ', 사는 곳은', address, '입니다.')
+
+
+# LAB 4-12
+
+print('_'.join('ABCD'))
+
+s1 = 'My favorite thing is monsters.'
+t1 = s1.replace('monsters', 'cartoon')
+print(t1)
