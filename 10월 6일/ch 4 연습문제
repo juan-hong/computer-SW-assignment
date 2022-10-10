@@ -1,0 +1,56 @@
+# 연습문제 1번
+# 질문: 1. 문제에서 몇개의 함수를 받는다고 안나오고 어떻게 함수 받는걸 끝내는 지도 않나오는데 어떻게 해야할지 모르겠다
+# 질문: 2. 리스트에다가 저장을 해야 하나 input이 어렵다
+# 대답: input을 모르겠어서 만들어둔 함수 3개를 올림
+
+def mean_of_n (*nums):
+    result = 0
+    k = 0
+    for i in nums:
+        result += i
+        k += 1
+    return round(result / k, 1)
+def max_of_n (*nums):
+    result = 0
+    k = 0
+    for i in nums:
+        if k == 0:
+            result = i
+            k += 1
+        if result < i:
+            result = i
+    return result
+def min_of_n (*nums):
+    result = 0
+    k = 0
+    for i in nums:
+        if k == 0:
+            result = i
+            k += 1
+        if result > i:
+            result = i
+    return result
+print(mean_of_n(3, 45, 32, 5, 7, 8, 4, 44, 5, 90, 17))
+print(max_of_n(3, 45, 32, 5, 7, 8, 4, 44, 5, 90, 17))
+print(min_of_n(3, 45, 32, 5, 7, 8, 4, 44, 5, 90, 17))
+
+
+# 연습문제 2번
+
+def area (x1, x2, y1, y2):
+    x_value = x2 - x1
+    y_value = y2 - y1
+    return (x_value * y_value)
+x1 = int(input('x1의 좌표를 입력하시오 : '))
+y10= int(input('y1의 좌표를 입력하시오 : '))
+x2 = int(input('x2의 좌표를 입력하시오 : '))
+y2 = int(input('y2의 좌표를 입력하시오 : '))
+print('직사각형의 면적은 : ',area(x1,x2,y1,y2))
+
+
+# 연습문제 3번
+
+s = input('쉼표로 구분된 정수를 입력하시오')
+r0 = s.split(',')
+print('입력된 정수의 리스트 :',r0)
+print('정렬된 정수의 리스트 :',*r0)
