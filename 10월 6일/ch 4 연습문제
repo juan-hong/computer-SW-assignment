@@ -42,15 +42,94 @@ def area (x1, x2, y1, y2):
     y_value = y2 - y1
     return (x_value * y_value)
 x1 = int(input('x1의 좌표를 입력하시오 : '))
-y10= int(input('y1의 좌표를 입력하시오 : '))
+y1 = int(input('y1의 좌표를 입력하시오 : '))
 x2 = int(input('x2의 좌표를 입력하시오 : '))
 y2 = int(input('y2의 좌표를 입력하시오 : '))
 print('직사각형의 면적은 : ',area(x1,x2,y1,y2))
 
 
-# 연습문제 3번
+# 연습문제 4번
 
 s = input('쉼표로 구분된 정수를 입력하시오')
 r0 = s.split(',')
 print('입력된 정수의 리스트 :',r0)
 print('정렬된 정수의 리스트 :',*r0)
+
+# 연습문제 4번
+# 질문 : 최소 공배수를 구하는 식을 못 만들겠다 ㅠ
+# 그래서 일단 그거 외에 만든 코드만 올림
+
+x1 = int(input('범위의 시작 정수 :'))
+x2 = int(input('범위의 마지막 정수 :'))
+print('{}에서 {}까지의 정수들의 최소 공배수는 :')
+
+
+# 연습문제 5번 
+# 질문 : 나에게 너무 어려운 문제 인것 같다 for문 으로 자연스럽게 돌려야 하는지 아니면 초반에 여러개를 define 하고 해야하는지 감이 안온다
+# 찾지못함
+
+
+# 연습문제 6번
+
+def max2 (a,b):
+    if a > b:
+        return a
+    else:
+        return b
+def min2 (a,b):
+    if a > b:
+        return b
+    else:
+        return a
+print('100과 200중 더 큰 수는 :', max2(100,200))
+print('100과 200중 더 작은 수는 :', min2(100,200))
+
+
+# 연습문제 7번
+
+def mile2km (m):
+    return m * 1.61
+for i in range(1,6):
+    print('{} 마일 = {} 킬로미터'.format(i, mile2km(i)))
+    
+    
+# 연습문제 8번
+
+def distance(x1, y1, x2, y2):
+    x_dis = x2 - x1
+    y_dis = y2 - y1
+    value = (x_dis ** 2) + (y_dis ** 2)
+    return value ** (1/2)
+x1 = int(input('x1의 좌표를 입력하시오 : '))
+y1 = int(input('y1의 좌표를 입력하시오 : '))
+x2 = int(input('x2의 좌표를 입력하시오 : '))
+y2 = int(input('y2의 좌표를 입력하시오 : '))
+print(distance(x1,y1,x2,y2))
+
+
+# 연습문제 9번
+
+def sort3(a,b,c):
+    a0 = []
+    a0.append(a)
+    a0.append(b)
+    a0.append(c)
+    a0.sort()
+    return a0
+print('세 수를 입력하시오')
+a = int(input(' '))
+b = int(input(' '))
+c = int(input(' '))
+print('정렬된 리스트는 다음과 같습니다 :', end=(''))
+a = list(sort3(a,b,c))
+for i in range(3):
+    print(a[i], end=(' '))
+    
+    
+# 연습문제 10번
+
+def cal_area(width, height):
+    return width * height / 2
+width = int(input('밑변을 입력하시오 :'))
+height = int(input('높이를 입력하시오 :'))
+print('삼각형의 면적 :', cal_area(width, height))
