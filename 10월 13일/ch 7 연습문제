@@ -38,3 +38,46 @@ elif n_try < 6:
     print(n_try, '번 만에 맞추셧네요. 잘했어요^^\",')
 else:
     print(n_try, '번 만에 맞추다니 쩝쩝...')
+
+
+# 연습문제 3번
+
+# 연습문제 4번
+
+# 연습문제 5번
+
+# 연습문제 6번
+
+import datetime as dt
+today = dt.datetime.now()
+print('오늘의 날짜: {}년 {}월 {}일입니다'.format(today.year, today.month, today.day))
+s_day = dt.datetime(2019, 2, 24)
+how_long = dt.datetime.now() - s_day
+print('연애 시작일로부터 경과한 날짜 :', how_long.days, '일')
+hundred = dt.timedelta(days = 100)
+two_hundred = dt.timedelta(days = 200)
+five_hundred = dt.timedelta(days = 500)
+ten_hundred = dt.timedelta(days = 1000)
+push100day = today + hundred
+push200day = today + two_hundred
+push500day = today + five_hundred
+push1000day = today + ten_hundred
+print('100일 기념일 : {}년 {}월 {}일'.format(push100day.year, push100day.month, push100day.day))
+print('200일 기념일 : {}년 {}월 {}일'.format(push200day.year, push200day.month, push200day.day))
+print('500일 기념일 : {}년 {}월 {}일'.format(push500day.year, push500day.month, push500day.day))
+print('1000일 기념일 : {}년 {}월 {}일'.format(push1000day.year, push1000day.month, push1000day.day))
+
+
+# 연습문제 7번
+
+import time as t
+def sum1to1000000():
+    result = 0
+    for i in range(1, 1000001):
+        result += i
+s_time = t.time()
+for i in range(100):
+    sum1to1000000()
+e_time = t.time()
+gap = e_time - s_time
+print('1에서 1,000,000까지의 합을 100번 반복해서 구하는 시간: {:7.4f}초'.format(gap))
