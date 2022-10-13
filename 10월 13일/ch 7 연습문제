@@ -1,1 +1,40 @@
+# 연습문제 1번
 
+import random as rd
+a_value = rd.randrange(1,7)
+b_value = rd.randrange(1,7)
+if a_value == b_value:
+    print('로미오의 주사위 숫자는 {}입니다'.format(a_value))
+    print('줄리엣의 주사위 숫자는 {}입니다'.format(b_value))
+    print('로미오와 줄리엣은 비겼습니다!')
+elif a_value > b_value:
+    print('로미오의 주사위 숫자는 {}입니다'.format(a_value))
+    print('줄리엣의 주사위 숫자는 {}입니다'.format(b_value))
+    print('로미오가 승리했습니다!')
+else:
+    print('로미오의 주사위 숫자는 {}입니다'.format(a_value))
+    print('줄리엣의 주사위 숫자는 {}입니다'.format(b_value))
+    print('줄리엣이 승리했습니다!')
+    
+   
+# 연습문제 2번
+
+import random as rd
+guess = rd.randrange(1, 21)
+n_try = 0
+while(True):
+    value = int(input('1~20까지의 숫자를 입력하세요: '))
+    n_try += 1
+    if value == guess:
+        print('정답입니다!')
+        break
+    elif value < guess:
+        print(value, '보다 큽니다!')
+    else:
+        print(value, '보다 작습니다!')
+if n_try < 3:
+    print(n_try, '만에 맞춘 당신은 천재!')
+elif n_try < 6:
+    print(n_try, '번 만에 맞추셧네요. 잘했어요^^\",')
+else:
+    print(n_try, '번 만에 맞추다니 쩝쩝...')
