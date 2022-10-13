@@ -1,0 +1,15 @@
+import random as rd
+while(True):
+    a_value = rd.randrange(1,7)
+    b_value = rd.randrange(1,7)
+    if a_value == b_value:
+        a_value = rd.randrange(1,7)
+        b_value = rd.randrange(1,7)
+    elif a_value > b_value:
+        print('A = {}, B = {}'.format(a_value, b_value))
+        print('A가 승리했습니다!')
+        break
+    else:
+        print('A = {}, B = {}'.format(a_value, b_value))
+        print('B가 승리했습니다!')
+        break
