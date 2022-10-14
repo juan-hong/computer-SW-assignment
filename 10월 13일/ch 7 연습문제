@@ -1,5 +1,6 @@
 # 연습문제 1번
-
+# 질문 : 밑의 코드 말고 조금 더 예쁘게 할 수 없을까?
+# 대답 : 로미오와 줄리엣의 주사위 값은 결과에 상관없이 공통으로 출력하니 조건절 위에 로미오와 줄리엣의 결과값을 넣는것도 좋은 방법이고 코드 또한 줄어들 것이다.
 import random as rd
 a_value = rd.randrange(1,7)
 b_value = rd.randrange(1,7)
@@ -18,7 +19,8 @@ else:
     
    
 # 연습문제 2번
-
+# 질문 : 문제에 이하와 이상 미만이 잘못 표기 되어 있는것 같습니다.. ㅠ
+# 대답 : X
 import random as rd
 guess = rd.randrange(1, 21)
 n_try = 0
@@ -47,7 +49,9 @@ else:
 # 연습문제 5번
 
 # 연습문제 6번
-
+# 질문 : 꼭 100, 200, 500, 1000일에 해당하는 함수를 구현 해야 할까? 조금만 더 코드를 짧게 만들 수 없을까?
+# 대답 : 굳이 함수를 안만들고도 format에다가 식을 넣으면 된다는 사실을 알았다 하지만 그렇게 하면 코드는 4줄이 짧아지지만 가독성은 심히 떨어진 다는 사실을 발견했다
+         코드가 4줄 짧은 것 보다는 가독성이 조금더 중요한 것 같아 코드를 고치지 않고 그대로 남겨둔다.
 import datetime as dt
 today = dt.datetime.now()
 print('오늘의 날짜: {}년 {}월 {}일입니다'.format(today.year, today.month, today.day))
@@ -69,7 +73,9 @@ print('1000일 기념일 : {}년 {}월 {}일'.format(push1000day.year, push1000d
 
 
 # 연습문제 7번
-
+# 질문 : 과연 더 좋은 컴퓨터로 하면 시간이 줄어들까?
+# 대답 : 학교 컴퓨터 보다는 내 노트북(인텔 11세대 i7)은 평균 2.9초 가량 걸리고 학교 컴퓨터는 사양은 확인 못해봤읜 평균 6초대에 수렴한다는 사실을 발견했다.
+결론은 컴퓨터가 좋을 수록 시간이 단축된다!
 import time as t
 def sum1to1000000():
     result = 0
@@ -81,3 +87,38 @@ for i in range(100):
 e_time = t.time()
 gap = e_time - s_time
 print('1에서 1,000,000까지의 합을 100번 반복해서 구하는 시간: {:7.4f}초'.format(gap))
+
+
+# 연습문제 8번 
+# 질문 : 1000!을 100번 돌리는 문제를 만드는 도중 오류가 뜨는데 오류가 최대 재귀범위를 넘었다고 한다 어떻게 해야할까?
+# 대답 : X
+import time as t
+def fact(n):
+    if (n <= 1):
+        return 1
+    return (n * fact(n-1))
+s_time = t.time()
+for i in range(100):
+    fact(1000)
+e_time = t.time()
+gap = e_time - s_time
+print('1000!을 100번 반복해서 구하는 시간: {:7.4f}초'.format(gap))
+
+
+
+# 연습문제 9번
+
+import random as rd
+def myrand():
+    print(rd.randrange(1, 1000001))
+for i in range(10):
+    myrand()
+    
+    
+# 연습문제 10번
+
+import math
+for i in range(0, 181, 10):
+    print('sin ({}) = {:3.3f}, con ({:3}) = {:3.3f}, tan ({:3}) = {:3.3f}'
+    .format(i, math.sin(math.radians(i)), i, math.cos(math.radians(i))
+    , i, math.tan(math.radians(i))))
