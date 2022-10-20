@@ -1,0 +1,82 @@
+# 연습문제 1번
+
+try:
+    f = open('greet.txt', 'w')
+    f.write('Hi, everyone\n')
+    f.write('Welcome to Python')
+    f.close()
+except Exception as e:
+    print('error: ', e)
+    
+  
+# 연습문제 2번
+
+f = open('number1to10.txt', 'r')
+for i in range(10):
+    f.write('{}\n'.format(i + 1))
+f.close()
+
+f = open('number1to10.txt', 'r')
+fp = open('numberby10.txt', 'w')
+for i in range(10):
+    l = f.readline()
+    l = int(l)
+    fp.write('{}\n'.format(l * 10))
+f.close()
+
+f = open('number1to10.txt', 'r')
+fp = open('numberby10.txt', 'r')
+for i in range(10):
+    l = f.readline()
+    ll = fp.readline()
+    print('{} : {}'.format(l , ll))
+f.close()
+
+
+# 연습문제 3번
+
+try:
+    f = open('my_hello', '+')
+    f.write('Hello Python')
+except Exception as e:
+    print('error:', e)
+    
+error: Must have exactly one of create/read/write/append mode and at most one plus
+
+
+# 연습문제 4번
+
+f = open('hello.txt', 'r')
+print('hello.txt 파일 :\n')
+for i in range(2):
+    l = f.readline()
+    print(l)
+    
+f = open('hello.txt', 'a+')
+f.write('\nWelcome to Python')
+f.close()
+f = open('hello.txt', 'r')
+print('hello.txt 파일 :\n')
+for i in range(3):
+    l = f.readline()
+    print(l)
+    
+    
+# 연습문제 5번
+
+import random as rd
+f = open('randint30.txt', 'w')
+for i in range(30):
+    f.write('{:3}'.format(rd.randrange(1, 11)))
+f.close()
+
+import random as rd
+f = open('randint30.txt', 'r')
+n_list = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0,]
+for i in range(30):
+    s = f.read(3)
+    s = int(s)
+    n_list[s - 1] += 1
+f.close()
+for i in range(10):
+    print('{} : {}개'.format(i + 1, n_list[i]))
