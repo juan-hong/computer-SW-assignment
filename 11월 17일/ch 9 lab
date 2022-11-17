@@ -1,1 +1,179 @@
+#LAB 9-1
+
+a = 100
+b = 20000
+c = 2
+
+a = 40
+
+
+# LAB 9-2
+
+A. 객채 지향 프로그래밍 이란?
+클래스를 만들어서 객체들 위주로 프로그래밍을 한다.
+
+B. 절차적 프로그래밍
+순서대로 데이터를 읽어가는 프로그래밍이다.
+
+C. 그래픽 사용자 인터페이스
+사용자가 사용하기 편리하게 사용 할 수 있게 만든 입출력 할떄 쓰는 아이콘 등
+
+
+# LAB 9-3
+
+A. 클래스
+프로그램 상에서 사용되는 속성과 행위들을 모아둔 집합체
+
+B. 객체
+어떠한 하나의 물체? 같은 것을 이야기함
+ 
+C. 인스턴스
+클래스로 부터 만들어지는 개별적인 객체
+
+D. 클래스의 속성
+클래스의 특징등을 속성이라고 한다
+
+E. 클래스의 동작
+클래스가 할 수 있는 동작들
+
+
+# LAB 9-4
+
+class dog:
+   def bark(self):
+      print('멍 멍 크르르르릉')
+
+my_dog = dog()                   # Cat 인스턴스 생성
+my_dog.bark()
+
+
+# LAB 9-5
+
+class dog():
+   def __init__(self, name):
+      self.name = name
+   def bark(self):
+      print('멍멍 멍멍')
+
+my_dog = dog('Jindo')
+my_dog.bark()
+
+
+# LAB 9-6
+
+class dog:
+   def __init__(self, name):
+      self.name = name
+   def __str__(self):
+      return 'my_dog의 정보: dog(name ='+self.name+')'
+my_dog = dog('진도')
+print(my_dog)
+
+
+# LAB 9-7
+
+n = 100
+m = 200
+if n is m:
+  print('n is m')
+else:
+  print('n is not m')
+  
+결과값은 'n is not m'이 된다
+n과 m의 아이디가 다르기 때문이다
+
+
+# LAB 9-8
+
+class Vector2D:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def __mul__(self, other):
+        return Vector2D(self.x * other.x, self.y * other.y)
+    def __truediv__(self, other):
+        return Vector2D(self.x / other.x, self.y / other.y)
+    def __str__(self):
+        return "({}, {})".format(self.x, self.y)
+    def __neg__(self):
+        return Vector2D(-self.x, -self.y)
+v1 = Vector2D(30, 40)
+v2 = Vector2D(10, 20)
+v3 = v1 * v2
+print('v1 * v2 =', v3)
+v4 = v1 / v2   
+print('v1 / v2 =', v4)
+v5 = -v1
+print('-v1 =', v5)
+
+
+# LAB 9-9
+
+class Vector2D:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def __lt__(self, other):
+        if self.x + self.y > other.x + other.y:
+         return False
+        else:
+         return True
+    def __le__(self, other):
+        if self.x + self.y >= other.x + other.y:
+         return False
+        else:
+         return True
+    def __ge__(self, other):
+        if self.x + self.y <= other.x + other.y:
+         return False
+        else:
+         return True
+    def __gt__(self, other):
+        if self.x + self.y < other.x + other.y:
+         return False
+        else:
+         return True
+v1 = Vector2D(30, 40)
+v2 = Vector2D(10, 20)
+print('v1 > v2 =', v1 > v2)
+print('v1 >= v2 =', v1 >= v2)
+print('v1 < v2 =', v1 < v2)
+print('v1 <= v2 =', v1 <= v2)
+
+
+# LAB 9-10
+
+class rect:
+   def __init__(self, width, height):
+      self.width = width
+      self.height = height
+r1 = rect(100,200)
+print(r1.__dict__)
+print(r1.__dict__['width'])
+
+{'width': 100, 'height': 200}
+100
+
+class rect:
+   def __init__(self, width, height):
+      self.__width = width
+      self.__height = height
+r1 = rect(100,200)
+print(r1.__dict__)
+print(r1.__dict__['_rect__width'])
+
+{'_rect__width': 100, '_rect__height': 200}
+100
+
+
+
+
+
+
+
+
+
+
+
+
 
