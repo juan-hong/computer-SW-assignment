@@ -1,0 +1,30 @@
+# 연습문제 1번
+
+class dog:
+   def __init__(self, name, age):
+      self.name = name
+      self.age = age
+   def __str__(self):
+      return '이름은 '+self.name+'이고, 나이는 '+str(self.age)+'살 입니다.'
+my_dog = dog('Mango', 3)
+print(my_dog)
+
+
+# 연습문제 2번
+
+class counter:
+   def __init__(self, number = 0):
+      self.number = number
+   def reset(self):
+      self.number = 0
+   def inc(self):
+      self.number += 1
+      if self.number > 99:
+         self.reset(self.number)
+   def dec(self):
+      self.number -= 1
+      if self.number < 0:
+         self.reset(self.number)
+   def __str__(self):
+      return 'C'+self.number
+   def __add__(self)
