@@ -26,5 +26,39 @@ class counter:
       if self.number < 0:
          self.reset(self.number)
    def __str__(self):
-      return 'C'+self.number
-   def __add__(self)
+      return 'C('+str(self.number)+')'
+   def __add__(self, other):
+      num = self.number + other.number
+      if num < 100:
+        return counter(num)
+      else:
+        self.reset()
+   def __sub__(self, other):
+      num = self.number - other.number
+      if num > -1:
+        return counter(num)
+      else:
+        self.reset()
+        return self
+
+c1 = counter(10)
+c1.inc()
+print('c1 =', c1)
+
+print()
+
+c2 = counter()
+c2.inc()
+c2.inc()
+c2.dec()
+print('c2 =', c2)
+c2.reset()
+print('c2 =', c2)
+
+#add, sub 확인
+c1 = counter(10)
+c2 = counter(20)
+c3=  c1 + c2
+c4 = c1 - c2
+print('c3 =', c3)
+print('c4 =', c4)
