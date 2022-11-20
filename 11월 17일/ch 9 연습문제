@@ -62,3 +62,35 @@ c3=  c1 + c2
 c4 = c1 - c2
 print('c3 =', c3)
 print('c4 =', c4)
+
+
+# 연습문제 3번
+
+class acount:
+    def __init__(self, name, acount_num, bbalance = 0):
+        self.name = name
+        self.acount_num = acount_num
+        self.bbalance = bbalance
+    def __str__(self):
+        return self.name+'님의 계좌'+str(self.acount_num)+'의 잔고는'+str(self.bbalance)+'원 입니다.'
+    def get_name(self):
+        return self.name
+    def get_acount_num(self):
+        return self.acount_num
+    def get_balance(self):
+        return self.bbalance
+    def deposit(self, other):
+        self.bbalance = self.bbalance + other
+        print(str(other)+'원이 입금되었습니다. 잔고는'+str(self.bbalance)+'원입니다.')
+    def withdraw(self, other):
+        self.bbalance = self.bbalance - other
+        if other > self.bbalance:
+            print('계좌의 잔고는'+str(self.bbalance)+'원으로 인출 요구 금액'+str(other)+'원보다 작습니다.')
+
+acount1 = acount('홍길동', '1234-0001')
+print(acount1)
+acount1.deposit(2000)
+print(acount1)
+acount1.withdraw(500)
+print(acount1)
+acount1.withdraw(5000)
