@@ -97,7 +97,6 @@ acount1.withdraw(5000)
 
 
 # 연습문제 4번
-
 class student:
     def __init__(self, name, student_id, korean = 0, math = 0, science = 0, total = 0):
         self.name = name
@@ -116,18 +115,33 @@ class student:
         return self.science
     def get_math(self):
         return self.math
+    def set_korean(self, score):
+        self.korean = score
+    def set_math(self, score):
+        self.math = score
+    def set_science(self, score):
+        self.science = score
     def get_total(self):
-        return self.total
+        amount = self.korean + self.math + self.science
+        return amount
     def get_avg(self):
         avg = (self.korean + self.math + self.science) / 3
         return avg
     def __str__(self):
-        return ('이름:'+self.name+', 학번:'+self.student_id+', 국어점수:'+str(self.korean) /
-        ', 수학성적:'+str(self.math)+', 과학성적:'+str(self.science)+', 합계:'+str(self.total)+', 평균:'+str(self.get_avg))
-
+        return ('이름:'+self.name+', 학번:'+str(self.student_id)+', 국어점수:'+str(self.korean)+
+                ', 수학성적:'+str(self.math)+', 과학성적:'+str(self.science)+
+                ', 합계:'+str(self.get_total())+', 평균:'+str(self.get_avg()))
+      
 name = input('학생의 이름을 입력하세요 :')
 student_id = input('학생의 학번을 입력하세요 :')
 
 stud = student(name, student_id)
 
-korean = int(input('학생의 국어 성적을 입력하시오 :'))
+koreans = int(input('학생의 국어 성적을 입력하시오 :'))
+maths = int(input('학생의 수학 성적을 입력하시오 :'))
+sciences = int(input('학생의 과학 성적을 입력하시오 :'))
+stud.set_korean(koreans)
+stud.set_math(maths)
+stud.set_science(sciences)
+print(stud)
+
