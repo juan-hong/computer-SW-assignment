@@ -145,3 +145,62 @@ stud.set_math(maths)
 stud.set_science(sciences)
 print(stud)
 
+
+#연습문제 5번
+
+class tv:
+    def __init__(self, volume = 5, channel = 0, condition = False):
+        self.volume = volume
+        self.channel = channel
+        self.condition = condition
+    def __str__(self):
+        if self.condition == 0:
+            return 'TV가 꺼짐 상태입니다'
+        else:
+            return '볼륨 ='+str(self.volume)+', 채널 ='+str(self.channel)
+    def toggle_power(self):
+        if self.condition == True:
+            self.condition = False
+        else:
+            self.condition = True
+    def get_channel(self):
+        return self.channel
+    def set_channel(self, choice):
+        if choice > 200 or choice < 0:
+            print('채널오류')
+        else:
+            self.channel = choice
+    def get_volume(self):
+        return self.volume
+    def set_volume(self, choice):
+        if choice > 20 or choice < 0:
+            print('볼륨오류')
+        else:
+            self.volume = choice
+    def volume_up(self):
+        if self.volume < 20:
+            self.volume += 1
+    def volume_down(self):
+        if self.volume > 0:
+            self.volume -= 1
+    def channel_up(self):
+        if self.channel < 200:
+            self.channel += 1
+        else:
+            self.channel = 0
+    def channel_down(self):
+        if self.channel < 1:
+            self.channel -= 1
+        else:
+            self.channel = 200
+
+my_tv = tv()
+print(my_tv)
+my_tv.toggle_power()
+print(my_tv)
+my_tv.set_channel(200)
+print(my_tv)
+my_tv.volume_up()
+my_tv.channel_up()
+print(my_tv)
+
