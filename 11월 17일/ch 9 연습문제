@@ -204,3 +204,45 @@ my_tv.volume_up()
 my_tv.channel_up()
 print(my_tv)
 
+
+#연습문제 6번
+
+class rectangle:
+   def __init__(self, x, y, width, height):
+      self.x = x
+      self.y = y
+      self.width = width
+      self.height = height
+   def __str__(self):
+      return '(x ='+str(self.x)+', y ='+str(self.y)+', h ='+str(self.height)+'), 면적:'+str(self.area())
+   def set_x(self, value):
+      self.x = value
+   def set_y(self, value):
+      self.y = value
+   def set_width(self, value):
+      self.width = value
+   def set_height(self, value):
+      self.height = value
+   def get_x(self):
+      return self.x
+   def get_y(self):
+      return self.y
+   def get_width(self):
+      return self.width
+   def get_height(self):
+      return self.height
+   def area(self):
+      return (self.width * self.height)
+   def overlaps(self):
+      
+r1 = rectangle(0, 0, 100, 100)
+r2 = rectangle(0, -10, 10, 10)
+r3 = rectangle(-100, 0, 120, 100)
+
+print('r1 =', r1)
+print('r2 =', r2)
+print('r3 =', r3)
+
+
+#연습문제 7번
+
