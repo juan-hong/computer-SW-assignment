@@ -1,1 +1,127 @@
+# LAB 10-1
 
+add = lambda x, y: x + y
+sub = lambda x, y: x - y
+
+print(sub(200,100)) 
+
+
+# LAB 10-2
+
+n_list = [1,2,3,4,5,6,7,8,9,10]
+even_list = []
+for n in filter(lambda x:x % 2 == 0, n_list):
+    even_list.append(n)
+print('짝수 리스트: ', even_list)
+
+n_list = [1,2,3,4,5,6,7,8,9,10]
+even_list = list(filter(lambda x: x % 2 == 0, n_list))
+print('짝수 리스트: ', even_list)
+
+n_list = [1,2,3,4,5,6,7,8,9,10]
+odd_list = []
+for n in filter(lambda x:x % 2 == 0, n_list):
+    odd_list.append(n)
+print('짝수 리스트: ', odd_list)
+
+n_list = [1,2,3,4,5,6,7,8,9,10]
+odd_list = list(filter(lambda x: x % 2 == 0, n_list))
+print('짝수 리스트: ', odd_list)
+
+
+# LAB 10-3
+
+def to_upper(c):
+    return c.upper()
+a_list = ['a', 'b', 'c', 'd', 'e']
+A_list = list(map(to_upper, a_list))
+print(A_list)
+
+a_list = ['a', 'b', 'c', 'd', 'e']
+A_list = list(map(lambda x: x.upper(), a_list))
+print(A_list)
+
+def mul2(c):
+    return c * 2
+def mul3(c):
+    return c * 3
+n_list = [10,20,30]
+n2_list = list(map(mul2, n_list))
+n3_list = list(map(mul3, n_list))
+print('입력 값의 두배 : ', n2_list)
+print('입력 값의 세배 : ', n3_list)
+
+n_list = [10,20,30]
+n2_list = list(map(lambda x: x * 2, n_list))
+n3_list = list(map(lambda x: x * 3, n_list))
+print('입력 값의 두배 : ', n2_list)
+print('입력 값의 세배 : ', n3_list)
+
+
+# LAB 10-4
+
+from functools import reduce
+n_list = list(range(1,101))
+n = reduce(lambda x,y:x+y, n_list)
+print('1에서 100까지의 합 :', n)
+
+from functools import reduce
+n_list = list(range(1,11))
+n = reduce(lambda x,y:x*y, n_list)
+print('10! :', n)
+
+
+# LAB 10-5
+
+n_list = list(range(1,11))
+cubic = [x ** 3 for x in n_list]
+print('cubic :', cubic)
+
+st = ['welcom', 'to', 'the', 'python', 'world']
+first_list = [x[0] for x in st]
+print(first_list)
+
+
+# LAB 10-6
+
+lst = list(range(1,11))
+cubic = list(map(lambda x: x ** 3, lst))
+cubic5 = [n for n in cubic if n < 500]
+print(cubic5)
+
+
+# LAB 10-7
+
+class even:
+    def __init__(self, n = 0):
+        self.n = n
+    def __iter__(self):
+        return self
+    def __next__(self):
+        t = self.n
+        self.n += 2
+        return t
+my = even()
+for i in range(5):
+    print(my.__next__(), end=(' '))
+    
+    class even:
+    def __init__(self, n = 0):
+        self.n = n
+    def __iter__(self):
+        return self
+    def __next__(self):
+        t = self.n
+        self.n += 2
+        return t
+my = even()
+while(True):
+    if my.n <= 20:
+        print(my.__next__(), end=(' '))
+        
+ 
+# LAB 10-8
+
+1. welcom      to        Busan       Metropolitan City
+2. Hello     My name is Dongmin     Good to see you again
+3. fruits.split('|')
